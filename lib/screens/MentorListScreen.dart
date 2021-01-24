@@ -1,15 +1,16 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MentorListScreen extends StatefulWidget {
+  MentorListScreen({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MentorListScreenState createState() => _MentorListScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MentorListScreenState extends State<MentorListScreen> {
   GlobalKey<ScaffoldState> _key = GlobalKey();
 
   Widget _icon(IconData icon, {Color color = Colors.blue}) {
@@ -68,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
       key: _key,
       appBar: AppBar(
         leading: _appBar(),
-        title: Text("Home"),
+        title: Text("Mentor List Screen"),
         centerTitle: true,
       ),
       drawer: Drawer(
@@ -105,6 +106,24 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ],
         ),
+      ),
+      body: ListView(
+        children: <Widget>[
+          Card(
+            child: ListTile(
+              leading: Text('image of mentor'),
+              title: Text('Name of mentor'),
+              trailing: Icon(Icons.more_vert),
+            ),
+          ),
+          Card(
+          child: ListTile(
+              leading: Text('image of mentor'),
+              title: Text('Name of mentor'),
+              trailing: Icon(Icons.more_vert),
+            ),
+          )
+        ],
       ),
     );
   }

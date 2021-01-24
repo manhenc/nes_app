@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
 Widget nesAppBar(context) => AppBar(
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: <Color>[Colors.blueAccent, Colors.white])),
-      ),
+      leading: Icon(Icons.menu),
+      backgroundColor: Colors.blueAccent,
+      actions: [
+        IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () {
+            print("Search Pressed");
+          },
+        ),
+        IconButton(
+          icon: Icon(Icons.more_vert),
+          onPressed: () {
+            print("More Pressed");
+          },
+        ),
+      ],
     );
