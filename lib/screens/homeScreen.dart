@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/MentorListScreen.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -66,6 +67,24 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
+      body: ListView(
+        children: <Widget>[
+          Card(
+            child: ListTile(
+              leading: Text('pic of news'),
+              title: Text('Breaking news NES '),
+              trailing: Icon(Icons.more_vert),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              leading: Text('pic of news'),
+              title: Text('Breaking news NES '),
+              trailing: Icon(Icons.more_vert),
+            ),
+          )
+        ],
+      ),
       appBar: AppBar(
         leading: _appBar(),
         title: Text("Home"),
@@ -103,6 +122,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pop(context);
               },
             ),
+            ListTile(
+              title: Text('Mentor List'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MentorListScreen()));
+              },
+            )
           ],
         ),
       ),
