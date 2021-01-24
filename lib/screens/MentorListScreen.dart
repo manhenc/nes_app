@@ -117,7 +117,7 @@ class _MentorListScreenState extends State<MentorListScreen> {
             ),
           ),
           Card(
-          child: ListTile(
+            child: ListTile(
               leading: Text('image of mentor'),
               title: Text('Name of mentor'),
               trailing: Icon(Icons.more_vert),
