@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/login_textfield_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -31,7 +32,15 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Padding(
                 padding: EdgeInsets.only(top: 128),
-                child: _loginButton(width: width, onPressed: null),
+                child: _loginButton(
+                  width: width,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LoginTextfieldScreen()));
+                  },
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 16),
