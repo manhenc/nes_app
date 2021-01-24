@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/login_screen.dart';
 import 'package:flutter_app/screens/MentorListScreen.dart';
 
 void main() {
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MentorListScreen(),
+      home: LoginScreen(),
     );
   }
 }
