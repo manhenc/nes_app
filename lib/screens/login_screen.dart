@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/screens/login_textfield_screen.dart';
+import 'package:flutter_app/shared%20widgets/login_textfield_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
