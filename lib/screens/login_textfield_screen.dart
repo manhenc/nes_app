@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/homeScreen.dart';
 
 class LoginTextfieldScreen extends StatefulWidget {
+  static String id = 'login_text';
   @override
   _LoginTextfieldScreenState createState() => _LoginTextfieldScreenState();
 }
@@ -45,7 +47,10 @@ class _LoginTextfieldScreenState extends State<LoginTextfieldScreen> {
                   backTap: () {
                     Navigator.pop(context);
                   },
-                  loginPressed: null,
+                  loginPressed: () {
+                    print('press');
+                    Navigator.pushNamed(context, MyHomePage.id);
+                  },
                 ),
               ),
             ],
