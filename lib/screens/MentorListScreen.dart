@@ -5,6 +5,7 @@ class MentorListScreen extends StatefulWidget {
   MentorListScreen({Key key, this.title}) : super(key: key);
 
   final String title;
+  static String id = 'mentor_list';
 
   @override
   _MentorListScreenState createState() => _MentorListScreenState();

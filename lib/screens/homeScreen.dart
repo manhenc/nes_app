@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
+  static String id = 'home_page';
   MyHomePage({Key key, this.title}) : super(key: key);
 
   final String title;
