@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/princ/AndroidStudioProjects/nes_app22/lib/screens/login_textfield_screen.dart';
+import 'package:flutter_app/screens/login_textfield_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static String id = 'login_screen';
