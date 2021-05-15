@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/homeScreen.dart';
+import 'package:flutter_app/screens/registrationScreen.dart';
 
 class LoginTextfieldScreen extends StatefulWidget {
   static String id = 'login_text';
@@ -50,6 +51,9 @@ class _LoginTextfieldScreenState extends State<LoginTextfieldScreen> {
                   loginPressed: () {
                     print('press');
                     Navigator.pushNamed(context, MyHomePage.id);
+                  },
+                  registerPressed: () {
+                    Navigator.pushNamed(context, registrationScreen.id);
                   },
                 ),
               ),
@@ -114,14 +118,47 @@ Widget _backGesture({Function onTap}) => GestureDetector(
     );
 
 Widget _backAndLoginRow(
-        {double width, Function backTap, Function loginPressed}) =>
+        {double width,
+        Function backTap,
+        Function loginPressed,
+        Function registerPressed}) =>
     Container(
       width: width * 0.75,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _backGesture(onTap: backTap),
-          _loginButton(width: width, onPressed: loginPressed),
+      child: Column(
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _backGesture(onTap: backTap),
+              _loginButton(width: width, onPressed: loginPressed),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Center(
+            child: _registerButton(onPressed: registerPressed),
+          )
         ],
+      ),
+    );
+
+Widget _registerButton({Function onPressed}) => Container(
+      height: 20,
+      child: RaisedButton(
+        onPressed: onPressed,
+        color: Colors.white,
+        disabledColor: Colors.black,
+        splashColor: Colors.transparent,
+        child: Text(
+          'do not have any account? Register now.',
+          style: TextStyle(
+            decoration: TextDecoration.underline,
+            color: Colors.black,
+          ),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
       ),
     );

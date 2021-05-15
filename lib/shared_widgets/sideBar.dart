@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/MentorListScreen.dart';
+import 'package:flutter_app/screens/login_screen.dart';
 
 Widget nesSideBar(context) => Drawer(
       child: ListView(
@@ -37,6 +38,15 @@ Widget nesSideBar(context) => Drawer(
               // ...
               // Then close the drawer
               Navigator.pushNamed(context, MentorListScreen.id);
+            },
+          ),
+          ListTile(
+            title: Text('Log out'),
+            onTap: () {
+              // Update the state of the app
+              // ...
+              // Then close the drawer
+              Navigator.pushNamed(context, LoginScreen.id);
             },
           ),
         ],
