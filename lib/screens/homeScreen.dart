@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/models/article_model.dart';
+import 'package:flutter_app/services/news_article_api.dart';
+import 'package:flutter_app/shared_widgets/customListTile.dart';
 import 'package:flutter_app/shared_widgets/sideBar.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -12,6 +15,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  ApiService client = ApiService();
   GlobalKey<ScaffoldState> _key = GlobalKey();
 
   Widget _icon(IconData icon, {Color color = Colors.blue}) {
@@ -72,6 +76,22 @@ class _MyHomePageState extends State<MyHomePage> {
           leading: _appBar(),
           title: Text("Home"),
           centerTitle: true,
+        ),
+        body: FutureBuilder(
+          future: client.getArticle(),
+          builder:
+              (BuildContext context, AsyncSnapshot<List<Article>> snapshot) {
+            if (snapshot.hasData) {
+              List<Article> articles = snapshot.data;
+              return ListView.builder(
+                  itemCount: articles.length,
+                  itemBuilder: (context, index) =>
+                      customListTile(articles[index]));
+            }
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          },
         ),
         drawer: nesSideBar(context));
   }
