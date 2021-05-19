@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class EduRecPage extends StatefulWidget {
+class EduRecScreen extends StatefulWidget {
   static String id = 'home_page';
-  EduRecPage({Key key, this.title}) : super(key: key);
+  EduRecScreen({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _EduRecPageState createState() => _EduRecPageState();
+  _EduRecScreenState createState() => _EduRecScreenState();
 }
 
-class _EduRecPageState extends State<EduRecPage> {
+class _EduRecScreenState extends State<EduRecScreen> {
   @override
   Widget build(BuildContext context) {
     return Container();
