@@ -4,6 +4,7 @@ import 'package:flutter_app/screens/homeScreen.dart';
 import 'package:flutter_app/screens/login_screen.dart';
 import 'package:flutter_app/screens/login_textfield_screen.dart';
 import 'package:flutter_app/screens/registrationScreen.dart';
+import 'package:flutter_app/screens/edurec_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         LoginScreen.id: (context) => LoginScreen(),
         MentorListScreen.id: (context) => MentorListScreen(),
         LoginTextfieldScreen.id: (context) => LoginTextfieldScreen(),
+        EduRecScreen.id: (context) => EduRecScreen(),
         registrationScreen.id: (context) => registrationScreen(),
       },
     );
